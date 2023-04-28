@@ -4,6 +4,7 @@ from flask_smorest import Api
 from db import db
 from models.todo import TodoModel
 from flask_jwt_extended import JWTManager
+from flask_migrate import Migrate
 from blocklist import BLOCKLIST
 
 from resources.todo import blp as TodoBlueprint
@@ -24,7 +25,7 @@ def create_app(db_url=None):
     app.config["SQLALCHEMY_DATABASE_URI"] = db_url or os.getenv("DATABASE_URL", "sqlite:///data.db")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
-
+    migrate = Migrate(app, db) 
     api = Api(app)
 
 
@@ -96,8 +97,8 @@ def create_app(db_url=None):
         )
 
 
-    with app.app_context():
-        db.create_all()
+    # with app.app_context():
+    #     db.create_all()
 
     api.register_blueprint(TodoBlueprint)
     api.register_blueprint(UserBlueprint)
