@@ -9,7 +9,7 @@
 `docker run -dp 5000:5000 -w /app -v "$(pwd):/app" <IMAGE_NAME> sh -c "flask run --host 0.0.0.0"`
 
 3. Once the image is running, use the postman file provided in link below to interact with the API:
-[POSTMAN_COLLECTION](https://api.postman.com/collections/20771641-78558435-933a-4a76-8496-6f5ef6bcce76?access_key=PMAT-01GZ3R376J46SCZ998SEXWDS7R)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/20771641-78558435-933a-4a76-8496-6f5ef6bcce76?action=collection%2Ffork&collection-url=entityId%3D20771641-78558435-933a-4a76-8496-6f5ef6bcce76%26entityType%3Dcollection%26workspaceId%3Df7d0cbbf-27b3-4af2-b821-347154ded30d)
 
 ## Follow the steps below to use the app:
 
